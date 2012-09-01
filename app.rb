@@ -10,8 +10,8 @@ configure do
 end
 
 get '/' do
-	REDIS.sadd("dope", "nachos")
+	REDIS.set("dope", "nachos")
 	erb :index, :locals => {
-  		:cool => "dude"
+  		:cool => REDIS.get("dope")
   	}
 end
