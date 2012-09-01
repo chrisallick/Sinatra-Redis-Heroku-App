@@ -10,6 +10,7 @@ configure do
 end
 
 get '/' do
+	REDIS.set("dope", "nachos")
   erb :index, :locals => {
   	:cool => "dope"
   }
