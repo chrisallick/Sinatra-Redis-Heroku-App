@@ -11,6 +11,7 @@ end
 
 get '/' do
 	REDIS.sadd("dope", "nachos")
-	erb :index, :locals =>
+	erb :index, :locals => {
   		:cool => "dude"
+  	}
 end
